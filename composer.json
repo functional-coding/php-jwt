@@ -1,0 +1,24 @@
+{
+  "name": "fn-service/php-illuminate",
+  "license": "MIT",
+  "authors": [
+    {
+      "email": "dbwhddn10@gmail.com",
+      "name": "jongwoo Yoo"
+    }
+  ],
+  "require": {
+    "ext-json": "*",
+    "fn-service/php": "dev-master",
+    "web-token/jwt-framework": "2.1.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "FnService\\JWT\\": "src/",
+      "FnService\\JWT\\Tests\\": "tests/"
+    }
+  }
+}
