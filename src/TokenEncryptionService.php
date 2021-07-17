@@ -20,7 +20,7 @@ class TokenEncryptionService extends Service
         return [];
     }
 
-    public static function getArrCallbackLists() : array
+    public static function getArrCallbacks() : array
     {
         return [];
     }
