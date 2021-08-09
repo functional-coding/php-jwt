@@ -3,6 +3,7 @@
 namespace FunctionalCoding\JWT;
 
 use FunctionalCoding\Service;
+use JOSE_JWE;
 
 class TokenDecryptionService extends Service
 {
@@ -21,64 +22,40 @@ class TokenDecryptionService extends Service
     public static function getArrLoaders()
     {
         return [
-            'payload' => function ($decrypter, $jwk, $token) {
-                $jwe = (new CompactSerializer())->unserialize($token);
-
-                $decrypter->decryptUsingKey($jwe, $jwk, 0);
-
-                return json_decode($jwe->getPayLoad(), true);
-            },
-
-            'payload_keys' => function () {
-                throw new \Exception();
+            'payload' => function ($validToken) {
+                return json_decode($validToken, true);
             },
 
             'result' => function ($payload) {
                 return $payload;
             },
 
-            'valid_token' => function ($decrypter, $jwk, $payloadKeys, $token) {
+            'valid_token' => function ($decrypter, $secretKey, $token) {
                 try {
-                    $jwe = (new CompactSerializer())->unserialize($token);
-
-                    $decrypter->decryptUsingKey($jwe, $jwk, 0);
-                }
-                // @noinspection PhpUnusedLocalVariableInspection
-                catch (\Exception $exception) {
+                    $jwe = JOSE_JWE::decode($encrypted);
+                    $decrypted = $jwe->decrypt($secretKey);
+                } catch (\Exception $exception) {
                     return null;
                 }
 
-                $isValid = true;
-                $payload = json_decode($jwe->getPayLoad(), true);
-
-                if (null == $payload) {
-                    return null;
-                }
-
-                foreach ($payloadKeys as $key) {
-                    if (!array_key_exists($key, $payload)) {
-                        $isValid = false;
-                    }
-                }
-
-                return $isValid ? $token : null;
+                return $decrypted->plain_text;
             },
         ];
     }
 
     public static function getArrPromiseLists()
     {
-        return [
-            'payload' => ['valid_token:strict'],
-        ];
+        return [];
     }
 
     public static function getArrRuleLists()
     {
         return [
-            'token' => ['required'],
+            'secret_key' => ['required', 'string'],
 
-            'valid_token' => ['required'],
+            'token' => ['required', 'string'],
+
+            'valid_token' => ['required', 'string'],
         ];
     }
 
