@@ -1,6 +1,6 @@
 <?php
 
-namespace FunctionalCoding\JWT;
+namespace FunctionalCoding\JWT\Service;
 
 use FunctionalCoding\Service;
 use JOSE_JWE;
@@ -37,6 +37,7 @@ class TokenDecryptionService extends Service
                 } catch (\Exception $exception) {
                     return null;
                 }
+
                 return $decrypted->plain_text;
             },
         ];
