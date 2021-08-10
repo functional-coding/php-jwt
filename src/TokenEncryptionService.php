@@ -24,11 +24,11 @@ class TokenEncryptionService extends Service
                 throw new \Exception();
             },
 
-            'result' => function ($token) {
-                return $token;
+            'result' => function ($jwe) {
+                return $jwe->toString();
             },
 
-            'token' => function ($key, $payload) {
+            'jwe' => function ($key, $payload) {
                 $jwe = new JOSE_JWE(json_encode($payload));
 
                 return $jwe->encrypt($key);

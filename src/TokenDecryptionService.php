@@ -30,14 +30,13 @@ class TokenDecryptionService extends Service
                 return $payload;
             },
 
-            'valid_token' => function ($decrypter, $secretKey, $token) {
+            'valid_token' => function ($secretKey, $token) {
                 try {
-                    $jwe = JOSE_JWE::decode($encrypted);
+                    $jwe = JOSE_JWE::decode($token);
                     $decrypted = $jwe->decrypt($secretKey);
                 } catch (\Exception $exception) {
                     return null;
                 }
-
                 return $decrypted->plain_text;
             },
         ];
