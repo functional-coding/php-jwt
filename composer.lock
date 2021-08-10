@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/functional-coding/php.git",
-                "reference": "ea2234e0d0f8d6b4c45bdcd34cfc74fdae372d0d"
+                "reference": "77d957533ca90e0e79d93eed7be46b47093b2b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/functional-coding/php/zipball/ea2234e0d0f8d6b4c45bdcd34cfc74fdae372d0d",
-                "reference": "ea2234e0d0f8d6b4c45bdcd34cfc74fdae372d0d",
+                "url": "https://api.github.com/repos/functional-coding/php/zipball/77d957533ca90e0e79d93eed7be46b47093b2b62",
+                "reference": "77d957533ca90e0e79d93eed7be46b47093b2b62",
                 "shasum": ""
             },
             "require": {
@@ -49,7 +49,7 @@
                 "issues": "https://github.com/functional-coding/php/issues",
                 "source": "https://github.com/functional-coding/php/tree/master"
             },
-            "time": "2021-08-09T06:48:50+00:00"
+            "time": "2021-08-10T06:03:37+00:00"
         },
         {
             "name": "gree/jose",
@@ -846,17 +846,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/functional-coding/php-illuminate.git",
-                "reference": "23aa70d81d1f111f356193c11d19c2ce551919e9"
+                "reference": "9845515a89337e638405fed43f16e34e5da3283f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/functional-coding/php-illuminate/zipball/23aa70d81d1f111f356193c11d19c2ce551919e9",
-                "reference": "23aa70d81d1f111f356193c11d19c2ce551919e9",
+                "url": "https://api.github.com/repos/functional-coding/php-illuminate/zipball/9845515a89337e638405fed43f16e34e5da3283f",
+                "reference": "9845515a89337e638405fed43f16e34e5da3283f",
                 "shasum": ""
             },
             "require": {
                 "functional-coding/php": "dev-master",
                 "illuminate/container": "*",
+                "illuminate/contracts": "*",
                 "illuminate/database": "*",
                 "illuminate/http": "*",
                 "illuminate/pagination": "*",
@@ -890,7 +891,7 @@
                 "issues": "https://github.com/functional-coding/php-illuminate/issues",
                 "source": "https://github.com/functional-coding/php-illuminate/tree/master"
             },
-            "time": "2021-08-09T06:47:55+00:00"
+            "time": "2021-08-10T07:35:30+00:00"
         },
         {
             "name": "illuminate/collections",
