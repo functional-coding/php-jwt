@@ -14,7 +14,7 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "functional-coding/php-illuminate": "dev-master",
+        "illuminate/validation": "^8.54",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
