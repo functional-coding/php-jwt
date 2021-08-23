@@ -28,10 +28,10 @@ class TokenEncryptionService extends Service
                 return $jwe->toString();
             },
 
-            'jwe' => function ($key, $payload) {
+            'jwe' => function ($publicKey, $payload) {
                 $jwe = new JOSE_JWE(json_encode($payload));
 
-                return $jwe->encrypt($key);
+                return $jwe->encrypt($publicKey);
             },
         ];
     }
@@ -44,7 +44,7 @@ class TokenEncryptionService extends Service
     public static function getArrRuleLists()
     {
         return [
-            'key' => ['required', 'string'],
+            'public_key' => ['required', 'string'],
 
             'payload' => ['required', 'array'],
         ];

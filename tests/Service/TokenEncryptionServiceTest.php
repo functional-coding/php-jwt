@@ -14,11 +14,11 @@ class TokenEncryptionServiceTest extends _TestCase
     public function testBasicCase()
     {
         $service = new TokenEncryptionService([
-            'key' => file_get_contents(__DIR__.'/../_Fixture/id_rsa.pub'),
             'payload' => ['key1' => 'value1'],
+            'public_key' => file_get_contents(__DIR__.'/../_Fixture/id_rsa.pub'),
         ], [
-            'key' => '...',
             'payload' => '...',
+            'public_key' => '...',
         ]);
         $result = $service->run();
 
