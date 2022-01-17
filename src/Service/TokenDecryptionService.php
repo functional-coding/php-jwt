@@ -30,6 +30,10 @@ class TokenDecryptionService extends Service
                 return $payload;
             },
 
+            'secret_key' => function () {
+                throw new \Exception();
+            },
+
             'valid_token' => function ($secretKey, $token) {
                 try {
                     $jwe = JOSE_JWE::decode($token);
@@ -51,8 +55,6 @@ class TokenDecryptionService extends Service
     public static function getRuleLists()
     {
         return [
-            'secret_key' => ['required', 'string'],
-
             'token' => ['required', 'string'],
 
             'valid_token' => ['required', 'string'],

@@ -24,6 +24,10 @@ class TokenEncryptionService extends Service
                 throw new \Exception();
             },
 
+            'public_key' => function () {
+                throw new \Exception();
+            },
+
             'result' => function ($jwe) {
                 return $jwe->toString();
             },
@@ -43,11 +47,7 @@ class TokenEncryptionService extends Service
 
     public static function getRuleLists()
     {
-        return [
-            'public_key' => ['required', 'string'],
-
-            'payload' => ['required', 'array'],
-        ];
+        return [];
     }
 
     public static function getTraits()
