@@ -3,7 +3,6 @@
 namespace FunctionalCoding\JWT\Service;
 
 use FunctionalCoding\Service;
-use JOSE_JWE;
 
 class TokenEncryptionService extends Service
 {
@@ -33,7 +32,7 @@ class TokenEncryptionService extends Service
             },
 
             'jwe' => function ($publicKey, $payload) {
-                $jwe = new JOSE_JWE(json_encode($payload));
+                $jwe = new \JOSE_JWE(json_encode($payload));
 
                 return $jwe->encrypt($publicKey);
             },

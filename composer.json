@@ -1,11 +1,18 @@
 {
-    "name": "functional-coding/php-jwt",
+    "name": "functional-coding/jwt",
+    "license": "MIT",
     "authors": [
         {
             "email": "dbwhddn10@gmail.com",
             "name": "jongwoo Yoo"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "FunctionalCoding\\JWT\\": "src/",
+            "FunctionalCoding\\JWT\\Tests\\": "tests/"
+        }
+    },
     "require": {
         "functional-coding/php": "dev-master",
         "gree/jose": "dev-master",
@@ -14,14 +21,6 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "illuminate/validation": "^8.54",
         "phpunit/phpunit": "^9.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "FunctionalCoding\\JWT\\": "src/",
-            "FunctionalCoding\\JWT\\Tests\\": "tests/"
-        }
-    },
-    "license": "MIT"
+    }
 }

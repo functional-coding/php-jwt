@@ -3,10 +3,10 @@
 namespace FunctionalCoding\JWT\Tests\Service;
 
 use FunctionalCoding\JWT\Service\TokenEncryptionService;
-use FunctionalCoding\JWT\Tests\_TestCase;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class TokenEncryptionServiceTest extends _TestCase
@@ -15,7 +15,7 @@ class TokenEncryptionServiceTest extends _TestCase
     {
         $service = new TokenEncryptionService([
             'payload' => ['key1' => 'value1'],
-            'public_key' => file_get_contents(__DIR__.'/../_Fixture/id_rsa.pub'),
+            'public_key' => file_get_contents(__DIR__.'/_Fixture/id_rsa.pub'),
         ], [
             'payload' => '...',
             'public_key' => '...',

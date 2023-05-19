@@ -3,7 +3,6 @@
 namespace FunctionalCoding\JWT\Service;
 
 use FunctionalCoding\Service;
-use JOSE_JWE;
 
 class TokenDecryptionService extends Service
 {
@@ -36,7 +35,7 @@ class TokenDecryptionService extends Service
 
             'valid_token' => function ($secretKey, $token) {
                 try {
-                    $jwe = JOSE_JWE::decode($token);
+                    $jwe = \JOSE_JWE::decode($token);
                     $decrypted = $jwe->decrypt($secretKey);
                 } catch (\Exception $exception) {
                     return null;
