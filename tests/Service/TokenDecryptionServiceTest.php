@@ -32,7 +32,8 @@ class TokenDecryptionServiceTest extends _TestCase
             'secret_key' => '...',
             'token' => '...',
         ]);
-        $result = $service->run();
+        $service->run();
+        $result = $service->getData()->offsetGet('result');
 
         $this->assertEquals($payload, $result);
     }

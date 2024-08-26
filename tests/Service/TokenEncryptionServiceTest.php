@@ -20,8 +20,9 @@ class TokenEncryptionServiceTest extends _TestCase
             'payload' => '...',
             'public_key' => '...',
         ]);
-        $result = $service->run();
+        $service->run();
+        $result = $service->getData()->offsetGet('result');
 
-        $this->assertIsString('string', $result);
+        $this->assertIsString($result);
     }
 }
