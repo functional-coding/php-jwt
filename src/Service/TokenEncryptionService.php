@@ -3,6 +3,9 @@
 namespace FunctionalCoding\JWT\Service;
 
 use FunctionalCoding\Service;
+use SimpleJWT\JWE;
+use SimpleJWT\Keys\KeySet;
+use SimpleJWT\Keys\RSAKey;
 
 class TokenEncryptionService extends Service
 {
@@ -28,13 +31,18 @@ class TokenEncryptionService extends Service
             },
 
             'result' => function ($jwe) {
-                return $jwe->toString();
+                return $jwe;
             },
 
             'jwe' => function ($publicKey, $payload) {
-                $jwe = new \JOSE_JWE(json_encode($payload));
+                $key = new RSAKey($publicKey, 'pem');
+                $set = new KeySet();
+                $set->add($key);
 
-                return $jwe->encrypt($publicKey);
+                $headers = ['alg' => 'RSA1_5', 'enc' => 'A128CBC-HS256'];
+                $jwe = new JWE($headers, json_encode($payload));
+
+                return $jwe->encrypt($set);
             },
         ];
     }

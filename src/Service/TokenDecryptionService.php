@@ -3,6 +3,9 @@
 namespace FunctionalCoding\JWT\Service;
 
 use FunctionalCoding\Service;
+use SimpleJWT\JWE;
+use SimpleJWT\Keys\KeySet;
+use SimpleJWT\Keys\RSAKey;
 
 class TokenDecryptionService extends Service
 {
@@ -35,13 +38,15 @@ class TokenDecryptionService extends Service
 
             'valid_token' => function ($secretKey, $token) {
                 try {
-                    $jwe = \JOSE_JWE::decode($token);
-                    $decrypted = $jwe->decrypt($secretKey);
+                    $key = new RSAKey($secretKey, 'pem');
+                    $set = new KeySet();
+                    $set->add($key);
+                    $jwe = JWE::decrypt($token, $set, 'RSA1_5');
                 } catch (\Exception $exception) {
                     return null;
                 }
 
-                return $decrypted->plain_text;
+                return $jwe->getPlaintext();
             },
         ];
     }

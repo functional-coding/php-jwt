@@ -7,10 +7,14 @@
             "FunctionalCoding\\JWT\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "lint": "php-cs-fixer fix",
+        "test": "phpunit"
+    },
     "require": {
-        "functional-coding/base": "dev-master",
-        "gree/jose": "dev-master",
         "php": ">=7.4",
+        "functional-coding/base": "dev-master",
+        "kelvinmo/simplejwt": "^0.9.1",
         "phpseclib/phpseclib": "^2.0"
     },
     "require-dev": {
