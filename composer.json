@@ -1,10 +1,11 @@
 {
-    "name": "functional-coding/jwt",
-    "description": "JWT service using `functional-coding/base`",
+    "name": "simplify-service-layer/jwt",
+    "description": "JWT service using `simplify-service-layer/base`",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "FunctionalCoding\\JWT\\": "src/",
-            "FunctionalCoding\\JWT\\Tests\\": "tests/"
+            "SimplifyServiceLayer\\JWT\\": "src/",
+            "SimplifyServiceLayer\\JWT\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -13,7 +14,7 @@
     },
     "require": {
         "php": ">=7.4",
-        "functional-coding/base": "dev-master",
+        "simplify-service-layer/base": "dev-master",
         "kelvinmo/simplejwt": "^0.9.1",
         "phpseclib/phpseclib": "^2.0"
     },

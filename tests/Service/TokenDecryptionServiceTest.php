@@ -1,8 +1,8 @@
 <?php
 
-namespace FunctionalCoding\JWT\Tests\Service;
+namespace SimplifyServiceLayer\JWT\Tests\Service;
 
-use FunctionalCoding\JWT\Service\TokenDecryptionService;
+use SimplifyServiceLayer\JWT\Service\TokenDecryptionService;
 use SimpleJWT\JWE;
 use SimpleJWT\Keys\KeySet;
 use SimpleJWT\Keys\RSAKey;

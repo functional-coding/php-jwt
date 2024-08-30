@@ -1,8 +1,8 @@
 <?php
 
-namespace FunctionalCoding\JWT\Tests\Service;
+namespace SimplifyServiceLayer\JWT\Tests\Service;
 
-use FunctionalCoding\JWT\Service\TokenEncryptionService;
+use SimplifyServiceLayer\JWT\Service\TokenEncryptionService;
 
 /**
  * @internal

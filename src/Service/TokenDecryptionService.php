@@ -1,8 +1,8 @@
 <?php
 
-namespace FunctionalCoding\JWT\Service;
+namespace SimplifyServiceLayer\JWT\Service;
 
-use FunctionalCoding\Service;
+use SimplifyServiceLayer\Service;
 use SimpleJWT\JWE;
 use SimpleJWT\Keys\KeySet;
 use SimpleJWT\Keys\RSAKey;

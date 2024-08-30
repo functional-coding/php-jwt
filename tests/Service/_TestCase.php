@@ -1,6 +1,6 @@
 <?php
 
-namespace FunctionalCoding\JWT\Tests\Service;
+namespace SimplifyServiceLayer\JWT\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
 
