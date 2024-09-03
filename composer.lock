@@ -1193,12 +1193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplify-service-layer/php.git",
-                "reference": "006d3dd7c8364b00d3ebe105a7c70fc771842b13"
+                "reference": "88b2f3c089a7e86fea92dd695925a61c35be375e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplify-service-layer/php/zipball/006d3dd7c8364b00d3ebe105a7c70fc771842b13",
-                "reference": "006d3dd7c8364b00d3ebe105a7c70fc771842b13",
+                "url": "https://api.github.com/repos/simplify-service-layer/php/zipball/88b2f3c089a7e86fea92dd695925a61c35be375e",
+                "reference": "88b2f3c089a7e86fea92dd695925a61c35be375e",
                 "shasum": ""
             },
             "require": {
@@ -1226,7 +1226,7 @@
                 "issues": "https://github.com/simplify-service-layer/php/issues",
                 "source": "https://github.com/simplify-service-layer/php/tree/master"
             },
-            "time": "2024-09-03T01:28:28+00:00"
+            "time": "2024-09-04T09:07:53+00:00"
         },
         {
             "name": "symfony/console",
